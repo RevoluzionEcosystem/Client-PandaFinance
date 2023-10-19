@@ -92,6 +92,13 @@ interface ICommonError {
     error InvalidValue(uint256 invalid);
 }
 
+interface IStaking {
+
+    // FUNCTION
+
+    function deposit(uint256 amount) external;
+}
+
 /********************************************************************************************
   ACCESS
 ********************************************************************************************/
@@ -177,12 +184,17 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     uint256 public constant BUYFEEMARKETING = 200;
     uint256 public constant SELLFEEMARKETING = 200;
     uint256 public constant TRANSFERFEEMARKETING = 200;
+    uint256 public constant BUYFEESTAKING = 100;
+    uint256 public constant SELLFEESTAKING = 100;
+    uint256 public constant TRANSFERFEESTAKING = 100;
     uint256 public constant BUYFEEBURN = 100;
     uint256 public constant SELLFEEBURN = 100;
     uint256 public constant TRANSFERFEEBURN = 100;
 
     uint256 public totalMarketingFeeCollected = 0;
     uint256 public totalMarketingFeeRedeemed = 0;
+    uint256 public totalStakingFeeCollected = 0;
+    uint256 public totalStakingFeeRedeemed = 0;
     uint256 public totalBurnFeeCollected = 0;
     uint256 public totalBurnFeeRedeemed = 0;
     uint256 public totalFeeCollected = 0;
@@ -197,6 +209,7 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     bool public isFeeActive = false;
     bool public isSwapEnabled = false;
     bool public inSwap = false;
+    bool public isStakingContract = false;
 
     address public constant ZERO = address(0);
     address public constant DEAD = address(0xdead);
@@ -204,6 +217,7 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     address public constant FEERECEIVER = "";
 
     address public pair;
+    address public stakingReceiver;
     
     // MAPPING
 
@@ -230,17 +244,29 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
 
     error PresaleAlreadyFinalized(bool current);
 
+    error InvalidStakingAddress(address staking);
+
     error TradeDisabled();
 
     error CannotUseMainPair();
 
     // CONSTRUCTOR
 
-    constructor() Ownable (msg.sender) {
+    constructor(
+        address stakingAddress,
+        bool isContract
+    ) Ownable (msg.sender) {
         _mint(msg.sender, 11_000_000_000 * 10**DECIMALS);
 
         router = IRouter(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
         pair = IFactory(router.factory()).createPair(address(this), router.WETH());
+
+        if (stakingReceiver == ZERO) {
+            revert InvalidStakingAddress(stakingAddress);
+        }
+
+        stakingReceiver = stakingAddress;
+        isStakingContract = isContract;
 
         isPairLP[pair] = true;
 
@@ -258,10 +284,14 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     event UpdateFeeActive(bool oldStatus, bool newStatus, address caller, uint256 timestamp);
 
     event UpdateSwapEnabled(bool oldStatus, bool newStatus, address caller, uint256 timestamp);
-        
-    event AutoRedeem(uint256 marketingAmount, uint256 burnAmount, uint256 amountToRedeem, address caller, uint256 timestamp);
+
+    event AutoRedeem(uint256 marketingAmount, uint256 stakingAmount, uint256 burnAmount, uint256 amountToRedeem, address caller, uint256 timestamp);
 
     event EnableTrading(bool oldStatus, bool newStatus, address caller, uint256 timestamp);
+
+    event UpdateIsStakingContract(bool oldStatus, bool newStatus, address caller, uint256 timestamp);
+
+    event UpdateStakingReceiver(address oldReceiver, address newReceiver, address caller, uint256 timestamp);
 
     // FUNCTION
 
@@ -281,21 +311,34 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     /* Redeem */
 
     function autoRedeem(uint256 amountToRedeem) public swapping {          
-        uint256 totalFee = BUYFEEMARKETING + BUYFEEBURN;
+        uint256 totalFee = BUYFEEMARKETING + BUYFEESTAKING + BUYFEEBURN;
         uint256 marketingRedeem = amountToRedeem * BUYFEEMARKETING / totalFee;
-        uint256 burnRedeem = amountToRedeem - marketingRedeem;
+        uint256 stakingRedeem = amountToRedeem * BUYFEESTAKING / totalFee;
+        uint256 burnRedeem = amountToRedeem - marketingRedeem - stakingRedeem;
         totalFeeRedeemed += amountToRedeem;
         totalMarketingFeeRedeemed += marketingRedeem;
+        totalStakingFeeRedeemed += stakingRedeem;
         totalBurnFeeRedeemed += burnRedeem;
 
         address[] memory path = new address[](2);
         path[0] = address(this);
         path[1] = router.WETH();
 
+        if (stakingReceiver == ZERO) {
+            revert InvalidStakingAddress(stakingReceiver);
+        }
+
+        if (isStakingContract) {
+            _approve(address(this), address(stakingReceiver), marketingRedeem);
+            IStaking(stakingReceiver).deposit(stakingRedeem);
+        } else {
+            _basicTransfer(address(this), stakingReceiver, stakingRedeem);
+        }
+
         _basicTransfer(address(this), DEAD, burnRedeem);
         _approve(address(this), address(router), marketingRedeem);
         
-        emit AutoRedeem(marketingRedeem, burnRedeem, amountToRedeem, msg.sender, block.timestamp);
+        emit AutoRedeem(marketingRedeem, stakingRedeem, burnRedeem, amountToRedeem, msg.sender, block.timestamp);
 
         router.swapExactTokensForETHSupportingFeeOnTransferTokens(
             marketingRedeem,
@@ -354,6 +397,20 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
         emit UpdateSwapEnabled(oldStatus, newStatus, msg.sender, block.timestamp);
     }
 
+    function updateIsStakingContract(bool newStatus) external onlyOwner {
+        if (isStakingContract == newStatus) { revert CannotUseCurrentState(newStatus); }
+        bool oldStatus = isStakingContract;
+        isStakingContract = newStatus;
+        emit UpdateIsStakingContract(oldStatus, newStatus, msg.sender, block.timestamp);
+    }
+
+    function updateStakingReceiver(address newReceiver) external onlyOwner {
+        if (stakingReceiver == newReceiver) { revert CannotUseCurrentAddress(newReceiver); }
+        address oldReceiver = stakingReceiver;
+        stakingReceiver = newReceiver;
+        emit UpdateStakingReceiver(oldReceiver, newReceiver, msg.sender, block.timestamp);
+    }
+
     function setExcludeFromFees(address user, bool status) external onlyOwner {
         if (isExcludeFromFees[user] == status) { revert CannotUseCurrentState(status); }
         isExcludeFromFees[user] = status;
@@ -370,37 +427,41 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
 
     function takeBuyFee(address from, uint256 amount) internal swapping returns (uint256) {
         uint256 feeAmountMarketing = amount * BUYFEEMARKETING / FEEDENOMINATOR;
+        uint256 feeAmountStaking = amount * BUYFEESTAKING / FEEDENOMINATOR;
         uint256 feeAmountBurn = amount * BUYFEEBURN / FEEDENOMINATOR;
-        uint256 newAmount = amount - feeAmountMarketing - feeAmountBurn;
-        if ((feeAmountMarketing + feeAmountBurn) > 0) {
-            tallyCollection(from, feeAmountMarketing, feeAmountBurn);
+        uint256 newAmount = amount - feeAmountMarketing - feeAmountStaking - feeAmountBurn;
+        if ((feeAmountMarketing + feeAmountStaking + feeAmountBurn) > 0) {
+            tallyCollection(from, feeAmountMarketing, feeAmountStaking, feeAmountBurn);
         }
         return newAmount;
     }
 
     function takeSellFee(address from, uint256 amount) internal swapping returns (uint256) {
         uint256 feeAmountMarketing = amount * SELLFEEMARKETING / FEEDENOMINATOR;
+        uint256 feeAmountStaking = amount * SELLFEESTAKING / FEEDENOMINATOR;
         uint256 feeAmountBurn = amount * SELLFEEBURN / FEEDENOMINATOR;
-        uint256 newAmount = amount - feeAmountMarketing - feeAmountBurn;
-        if ((feeAmountMarketing + feeAmountBurn) > 0) {
-            tallyCollection(from, feeAmountMarketing, feeAmountBurn);
+        uint256 newAmount = amount - feeAmountMarketing - feeAmountStaking - feeAmountBurn;
+        if ((feeAmountMarketing + feeAmountStaking + feeAmountBurn) > 0) {
+            tallyCollection(from, feeAmountMarketing, feeAmountStaking, feeAmountBurn);
         }
         return newAmount;
     }
 
     function takeTransferFee(address from, uint256 amount) internal swapping returns (uint256) {
         uint256 feeAmountMarketing = amount * TRANSFERFEEMARKETING / FEEDENOMINATOR;
+        uint256 feeAmountStaking = amount * TRANSFERFEESTAKING / FEEDENOMINATOR;
         uint256 feeAmountBurn = amount * TRANSFERFEEBURN / FEEDENOMINATOR;
-        uint256 newAmount = amount - feeAmountMarketing - feeAmountBurn;
-        if ((feeAmountMarketing + feeAmountBurn) > 0) {
-            tallyCollection(from, feeAmountMarketing, feeAmountBurn);
+        uint256 newAmount = amount - feeAmountMarketing - feeAmountStaking - feeAmountBurn;
+        if ((feeAmountMarketing + feeAmountStaking + feeAmountBurn) > 0) {
+            tallyCollection(from, feeAmountMarketing, feeAmountStaking, feeAmountBurn);
         }
         return newAmount;
     }
 
-    function tallyCollection(address from, uint256 collectFeeMarketing, uint256 collectFeeBurn) internal swapping {
-        uint256 collectFee = collectFeeMarketing + collectFeeBurn;
+    function tallyCollection(address from, uint256 collectFeeMarketing, uint256 collectFeeStaking, uint256 collectFeeBurn) internal swapping {
+        uint256 collectFee = collectFeeMarketing + collectFeeStaking + collectFeeBurn;
         totalMarketingFeeCollected += collectFeeMarketing;
+        totalStakingFeeCollected += collectFeeStaking;
         totalBurnFeeCollected += collectFeeBurn;
         totalFeeCollected += collectFee;
         _balances[from] -= collectFee;
@@ -562,13 +623,13 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 amount) internal swapping virtual returns (uint256) {
-        if (isPairLP[from] && ((BUYFEEMARKETING + BUYFEEBURN) > 0)) {
+        if (isPairLP[from] && ((BUYFEEMARKETING + BUYFEESTAKING + BUYFEEBURN) > 0)) {
             return takeBuyFee(from, amount);
         }
-        if (isPairLP[to] && ((SELLFEEMARKETING + SELLFEEBURN) > 0)) {
+        if (isPairLP[to] && ((SELLFEEMARKETING + SELLFEESTAKING + SELLFEEBURN) > 0)) {
             return takeSellFee(from, amount);
         }
-        if (!isPairLP[from] && !isPairLP[to] && ((TRANSFERFEEMARKETING + TRANSFERFEEBURN) > 0)) {
+        if (!isPairLP[from] && !isPairLP[to] && ((TRANSFERFEEMARKETING + TRANSFERFEESTAKING + TRANSFERFEEBURN) > 0)) {
             return takeTransferFee(from, amount);
         }
         return amount;
