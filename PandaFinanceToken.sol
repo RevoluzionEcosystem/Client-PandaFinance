@@ -181,9 +181,9 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     
     uint256 public constant FEEDENOMINATOR = 10_000;
 
-    uint256 public constant BUYFEEMARKETING = 200;
-    uint256 public constant SELLFEEMARKETING = 200;
-    uint256 public constant TRANSFERFEEMARKETING = 200;
+    uint256 public constant BUYFEEMARKETING = 100;
+    uint256 public constant SELLFEEMARKETING = 100;
+    uint256 public constant TRANSFERFEEMARKETING = 100;
     uint256 public constant BUYFEESTAKING = 100;
     uint256 public constant SELLFEESTAKING = 100;
     uint256 public constant TRANSFERFEESTAKING = 100;
