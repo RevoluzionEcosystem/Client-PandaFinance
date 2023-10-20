@@ -166,14 +166,14 @@ abstract contract Ownable {
   TOKEN
 ********************************************************************************************/
 
-contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
+contract PandaFinanc3 is Ownable, ICommonError, IERC20 {
 
     // DATA
 
     IRouter public router;
 
-    string private constant NAME = "PandaFiToken";
-    string private constant SYMBOL = "PFT";
+    string private constant NAME = "PandaFinanc3";
+    string private constant SYMBOL = "PAF";
 
     uint8 private constant DECIMALS = 18;
 
@@ -203,7 +203,7 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
     uint256 public lastTriggerZeusTimestamp = 0;
     uint256 public minSwap = 100 ether;
 
-    bool private constant ISPFT = true;
+    bool private constant ISPAF = true;
 
     bool public tradeEnabled = false;
     bool public isFeeActive = false;
@@ -213,8 +213,8 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
 
     address public constant ZERO = address(0);
     address public constant DEAD = address(0xdead);
-    address public constant PROJECTOWNER = "";
-    address public constant FEERECEIVER = "";
+    address public constant PROJECTOWNER = 0x37e25Fa9E27E12211572E555a49495B60d585f76;
+    address public constant FEERECEIVER = 0x37e25Fa9E27E12211572E555a49495B60d585f76;
 
     address public pair;
     address public stakingReceiver;
@@ -351,8 +351,8 @@ contract PandaFinanceToken is Ownable, ICommonError, IERC20 {
 
     /* Check */
 
-    function isPandaFiToken() external pure returns (bool) {
-        return ISPFT;
+    function isPandaFinanc3() external pure returns (bool) {
+        return ISPAF;
     }
 
     function circulatingSupply() external view returns (uint256) {
