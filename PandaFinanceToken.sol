@@ -261,7 +261,7 @@ contract PandaFinanc3 is Ownable, ICommonError, IERC20 {
         router = IRouter(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
         pair = IFactory(router.factory()).createPair(address(this), router.WETH());
 
-        if (stakingReceiver == ZERO) {
+        if (stakingAddress == ZERO) {
             revert InvalidStakingAddress(stakingAddress);
         }
 
