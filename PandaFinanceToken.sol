@@ -214,7 +214,7 @@ contract PandaFinanc3 is Ownable, ICommonError, IERC20 {
     address public constant ZERO = address(0);
     address public constant DEAD = address(0xdead);
     address public constant PROJECTOWNER = 0x37e25Fa9E27E12211572E555a49495B60d585f76;
-    address public constant FEERECEIVER = 0x37e25Fa9E27E12211572E555a49495B60d585f76;
+    address public constant FEERECEIVER = 0xa3d552C0709A867d024AC73A6444520C1444d450;
 
     address public pair;
     address public stakingReceiver;
