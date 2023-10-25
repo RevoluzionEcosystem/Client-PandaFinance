@@ -201,7 +201,7 @@ contract PandaFinanc3 is Ownable, ICommonError, IERC20 {
     uint256 public totalFeeRedeemed = 0;
     uint256 public totalTriggerZeusBuyback = 0;
     uint256 public lastTriggerZeusTimestamp = 0;
-    uint256 public minSwap = 100 ether;
+    uint256 public minSwap = 100_000 ether;
 
     bool private constant ISPAF = true;
 
