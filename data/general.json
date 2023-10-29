@@ -55,12 +55,6 @@
             "link": "/dashboard"
         },
         {
-            "id": "roulette",
-            "name": "Roulette",
-            "description": "Roulette",
-            "link": "/roulette"
-        },
-        {
             "id": "swap",
             "name": "Swap",
             "description": "Swap",
@@ -71,12 +65,6 @@
             "name": "Staking",
             "description": "Staking",
             "link": ""
-        },
-        {
-            "id": "sports-betting",
-            "name": "Sports Betting",
-            "description": "Sports Betting",
-            "link": "/sports-betting"
         }
     ],
     "network": {

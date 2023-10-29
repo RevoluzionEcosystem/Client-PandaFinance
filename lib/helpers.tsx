@@ -18,9 +18,6 @@ import { GetTokenMinSwap } from "../components/fetch/blockchain/token/getTokenMi
 import { GetTokenTotalBuybackBurn } from "../components/fetch/blockchain/token/getTokenTotalBuybackBurn"
 import { GetTokenTotalFeeCollected } from "../components/fetch/blockchain/token/getTokenTotalFeeCollected"
 import { GetTokenTotalFeeRedeemed } from "../components/fetch/blockchain/token/getTokenTotalFeeRedeemed"
-import { GetRouletteUserPlayRecord } from "../components/fetch/blockchain/roulette/user/getRouletteUserPlayRecord"
-import { GetRouletteUserBetRecord } from "../components/fetch/blockchain/roulette/user/getRouletteUserBetRecord"
-import { GetRouletteUserProfitRecord } from "../components/fetch/blockchain/roulette/user/getRouletteUserProfitRecord"
 
 import imgBlackjack from "../public/asset/img/game-blackjack.png"
 import imgCoinFlip from "../public/asset/img/game-coinflip.png"
@@ -141,18 +138,6 @@ export function getDashboardData(address: any, data: Number, formatted?: boolean
     }
     if (data === 15) {
         return GetTokenTotalFeeRedeemed(address, formatted, className)
-    }
-}
-
-export function getRouletteData(gameAddress: any, userAddress: any, data: number, formatted?: boolean, className?: string) {
-    if (data === 0) {
-        return GetRouletteUserPlayRecord(gameAddress, userAddress, formatted, className)
-    }
-    if (data === 1) {
-        return GetRouletteUserBetRecord(gameAddress, userAddress, formatted, className)
-    }
-    if (data === 2) {
-        return GetRouletteUserProfitRecord(gameAddress, userAddress, formatted, className)
     }
 }
 
