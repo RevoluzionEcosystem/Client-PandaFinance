@@ -1,0 +1,70 @@
+{
+    "headline": "Ronin Casino Dashboard",
+    "subheadline": "This is the dashboard page for Ronin Casino.",
+    "card": [
+        {
+            "title": "Total Supply (RNC)",
+            "data": 0
+        },
+        {
+            "title": "Circulating Supply (RNC)",
+            "data": 1
+        },
+        {
+            "title": "Burned Supply (RNC)",
+            "data": 2
+        },
+        {
+            "title": "Liquidity Supply (RNC)",
+            "data": 3
+        },
+        {
+            "title": "Liquidity Available",
+            "data": 4
+        },
+        {
+            "title": "Swap Enabled",
+            "data": 5
+        },
+        {
+            "title": "Fee Active",
+            "data": 6
+        },
+        {
+            "title": "Trade Enabled",
+            "data": 7
+        },
+        {
+            "title": "Buy Fee (%)",
+            "data": 8
+        },
+        {
+            "title": "Sell Fee (%)",
+            "data": 9
+        },
+        {
+            "title": "Transfer Fee (%)",
+            "data": 10
+        },
+        {
+            "title": "Antisnipe Fee (%)",
+            "data": 11
+        },
+        {
+            "title": "Swap Threshold (RNC)",
+            "data": 12
+        },
+        {
+            "title": "Buyback & Burned (RNC)",
+            "data": 13
+        },
+        {
+            "title": "Total Collected (RNC)",
+            "data": 14
+        },
+        {
+            "title": "Total Redeemed (RNC)",
+            "data": 15
+        }
+    ]
+}

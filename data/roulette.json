@@ -1,0 +1,15 @@
+{
+    "headline": "Ronin Casino Roulette",
+    "subheadline": "This is the roulette page for Ronin Casino.",
+    "statistics": [
+        {
+            "title": "Play record"
+        },
+        {
+            "title": "Total bet record"
+        },
+        {
+            "title": "Total profit record"
+        }
+    ]
+}
