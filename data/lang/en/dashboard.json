@@ -1,0 +1,139 @@
+{
+    "kicker_1": "PandaFinanc3 Dashboard",
+    "headline_1": "Token Insights at a Glance",
+    "subheadline_1": "Explore comprehensive token insights and uncover the power of PAF Token",
+    "selector": [
+        {
+            "value": "stats",
+            "title": "Stats"
+        }
+    ],
+    "content": {
+        "stats": {
+            "headline": "Statistics",
+            "subheadline": "This is important stats that you should know",
+            "data": [
+                {
+                    "title": "Total Supply",
+                    "tooltip": "Coming Soon",
+                    "data": 0
+                },
+                {
+                    "title": "Circulating Supply",
+                    "tooltip": "Coming Soon",
+                    "data": 1
+                },
+                {
+                    "title": "Swap Threshold",
+                    "tooltip": "Coming Soon",
+                    "data": 2
+                },
+                {
+                    "title": "Trade Enabled",
+                    "tooltip": "Coming Soon",
+                    "data": 3
+                },
+                {
+                    "title": "Swap Enabled",
+                    "tooltip": "Coming Soon",
+                    "data": 4
+                },
+                {
+                    "title": "Fee Active",
+                    "tooltip": "Coming Soon",
+                    "data": 5
+                },
+                {
+                    "title": "Total Auto Buyback",
+                    "tooltip": "Coming Soon",
+                    "data": 6
+                },
+                {
+                    "title": "Total Fee Collected",
+                    "tooltip": "Coming Soon",
+                    "data": 7
+                },
+                {
+                    "title": "Collected Burn Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 8
+                },
+                {
+                    "title": "Collected Marketing Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 9
+                },
+                {
+                    "title": "Collected Staking Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 10
+                },
+                {
+                    "title": "Total Fee Redeemed",
+                    "tooltip": "Coming Soon",
+                    "data": 11
+                },
+                {
+                    "title": "Redeemed Burn Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 12
+                },
+                {
+                    "title": "Redeemed Marketing Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 13
+                },
+                {
+                    "title": "Redeemed Staking Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 14
+                },
+                {
+                    "title": "Buy Burn Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 15
+                },
+                {
+                    "title": "Buy Marketing Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 16
+                },
+                {
+                    "title": "Buy Staking Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 17
+                },
+                {
+                    "title": "Sell Burn Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 18
+                },
+                {
+                    "title": "Sell Marketing Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 19
+                },
+                {
+                    "title": "Sell Staking Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 20
+                },
+                {
+                    "title": "Transfer Burn Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 21
+                },
+                {
+                    "title": "Transfer Marketing Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 22
+                },
+                {
+                    "title": "Transfer Staking Fee",
+                    "tooltip": "Coming Soon",
+                    "data": 23
+                }
+            ]
+        }
+    }
+}

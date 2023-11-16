@@ -1,0 +1,77 @@
+{
+    "project_title": "Panda Financ3",
+    "project_acronym": "PandaFinanc3",
+    "project_description": "Panda Financ3 decentralized application (dApp) by Revoluzion.",
+    "project_copyright": "© 2023 — Panda Financ3 | All rights reserved",
+    "terms": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System",
+        "networks": "Networks",
+        "global": "Global",
+        "loading": "Loading",
+        "search": "Search",
+        "breadcrumbs": "Breadcrumb",
+        "get_started": "Get Started",
+        "go_home": "Go To Homepage",
+        "go_back": "Go Back",
+        "toggle_theme": "Toggle Theme",
+        "powered_by": "Powered by",
+        "back_home": "Back To Homepage",
+        "rubic_onchain": "Rubic OnChain",
+        "rubic_crosschain": "Rubic CrossChain",
+        "view_contract": "View Smart Contract",
+        "view_explorer": "View On Explorer",
+        "view_ethereum": "View On EtherScan",
+        "view_binance": "View On BSCScan",
+        "view_polygon": "View On PolygonScan",
+        "read_whitepaper": "Read Whitepaper",
+        "something_wrong": "Oops, something went wrong",
+        "couldnt_find": "Sorry, we couldn't find your page"
+    },
+    "menu": [
+        {
+            "id": "home",
+            "name": "Home",
+            "link": "/home",
+            "type": "internal"
+        },
+        {
+            "id": "dashboard",
+            "name": "Dashboard",
+            "link": "/dashboard",
+            "type": "internal"
+        },
+        {
+            "id": "swap",
+            "name": "Swap",
+            "link": "/swap",
+            "type": "internal"
+        }
+    ],
+    "network": [
+        {
+            "title": "Ethereum (Mainnet)",
+            "value": "ethereum"
+        },
+        {
+            "title": "Polygon Matic (Mainnet)",
+            "value": "polygon"
+        },
+        {
+            "title": "Binance Smart Chain (Mainnet)",
+            "value": "binance"
+        }
+    ],
+    "contract": {
+        "token": "0xeFb9513A007F17A89bF6550b6Aa85c27F216C348"
+    },
+    "link": {
+        "presale": "https://pinksale.finance"
+    },
+    "development": {
+        "name": "Revoluzion",
+        "link": "https://revoluzion.app",
+        "title": "Revoluzion | Revolutionizing the Blockchain Industry as a One-Stop Service Provider" 
+    }
+}

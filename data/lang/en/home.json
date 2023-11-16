@@ -1,0 +1,79 @@
+{
+    "kicker_1": "Presale is now live",
+    "headline_1": "Welcome to Panda Financ3",
+    "subheadline_1": "Your Gateway to the Future of Decentralized Finance. 🐼✨",
+    "button_1": "Get Started",
+    "headline_2": "About Us",
+    "subheadline_2": "Discover our vision and commitment to transforming traditional finance through decentralized solutions",
+    "button_2": "Our Mission",
+    "subbutton_2": "Panda Financ3 is driven by a singular mission – Empowering Crypto Enthusiasts, From Novices to Veterans, With the Tools and Knowledge to Achieve Financial Excellence",
+    "button_3": "Why Choose Us",
+    "subbutton_3": "Learn why discerning individuals and investors turn to Panda Financ3 for cryptocurrency education and secure financial solutions",
+    "headline_3": "Our Ecosystem",
+    "subheadline_3": "Explore our comprehensive DeFi ecosystem, featuring a user-friendly wallet, a decentralized exchange, secure P2P trading, yield farming, staking, educational resources, and more",
+    "headline_4": "Ready to Begin Your Journey",
+    "subheadline_4": "Sign Up Now to Embark on an Enlightening Exploration of the Decentralized Financial Landscape With Panda Financ3",
+    "data": [
+        {
+            "title": "Panda Financ3 Wallet",
+            "data": [
+                {
+                    "header": "Total Asset Control",
+                    "content": "Safeguard Your Digital Wealth With the Panda Financ3 Wallet, Offering Unparalleled Security and Convenience"
+                },
+                {
+                    "header": "Cutting-Edge Security",
+                    "content": "Your Peace of Mind Is Our Priority – Explore Our Advanced Security Measures"
+                }
+            ]
+        },
+        {
+            "title": "Panda Financ3 Community",
+            "data": [
+                {
+                    "header": "Join Our Thriving Community",
+                    "content": "Connect With a Vibrant Network of Crypto Enthusiasts, Tapping Into the Vast Potential of Decentralized Finance"
+                },
+                {
+                    "header": "Stay Informed",
+                    "content": "Stay Updated With the Latest Developments, News, and Insights From the Panda Financ3 Community"
+                }
+            ]
+        },
+        {
+            "title": "PandaSwap (Decentralized Exchange)",
+            "data": [
+                {
+                    "header": "Confidence in Trading",
+                    "content": "Transact With Confidence Through Our Decentralized Exchange, Empowering You With Secure and Efficient Peer-to-Peer Trading"
+                }
+            ]
+        },
+        {
+            "title": "Yield Farming and Staking",
+            "data": [
+                {
+                    "header": "Grow Your Wealth",
+                    "content": "Optimize Your Assets Through Panda Financ3’s Yield Farming and Staking Features, Letting Your Cryptocurrency Work for You"
+                }
+            ]
+        },
+        {
+            "title": "Panda Financ3 Academy",
+            "data": [
+                {
+                    "header": "Educational Excellence",
+                    "content": "Experience World-Class Crypto Education Through Our Extensive Range of Courses and Resources"
+                },
+                {
+                    "header": "Expert Instructors",
+                    "content": "Learn From Distinguished Instructors Who Are Experts in the Field and Committed to Your Success"
+                },
+                {
+                    "header": "Interactive Learning",
+                    "content": "Engage in Immersive Learning With Interactive Content, Assessments, and Real-World Case Studies"
+                }
+            ]
+        }
+    ]
+}

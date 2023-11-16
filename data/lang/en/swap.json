@@ -1,0 +1,27 @@
+{
+    "kicker_1": "PandaSwap (Decentralized Exchange)",
+    "headline_1": "One Platform, Endless Possibilities",
+    "subheadline_1": "Seamlessly exchange assets across blockchains to unleash new possibilities",
+    "button_1": "Open blockchain explorer",
+    "button_2": "Back to homepage",
+    "selector": [
+        {
+            "value": "onchain",
+            "title": "On Chain"
+        },
+        {
+            "value": "crosschain",
+            "title": "Cross Chain"
+        }
+    ],
+    "content": {
+        "onchain": {
+            "headline": "OnChain Swap",
+            "subheadline": "This is where you swap token within the same network"
+        },
+        "crosschain": {
+            "headline": "CrossChain Swap",
+            "subheadline": "This is where you swap token within the different network"
+        }
+    }
+}
