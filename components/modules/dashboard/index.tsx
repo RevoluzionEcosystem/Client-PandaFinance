@@ -37,6 +37,7 @@ export default function Dashboard() {
                 <div className="mt-5 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                     <GoExplorerButton
                         type="primary"
+                        explorer="bscscan.com"
                         address={general["contract"].token}
                         text={general["terms"].view_contract}
                     />
