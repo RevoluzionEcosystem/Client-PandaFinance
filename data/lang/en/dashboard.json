@@ -15,122 +15,122 @@
             "data": [
                 {
                     "title": "Total Supply",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Total Supply of the token includes the circulating supply and the tokens that are locked or burned.",
                     "data": 0
                 },
                 {
                     "title": "Circulating Supply",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Circulating supply of the token is the amount of tokens that are in circulation in the market. This does not include the tokens that are locked or burned.",
                     "data": 1
                 },
                 {
                     "title": "Swap Threshold",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Swap Threshold is the amount of tokens that are required to be swapped before the swapback is enabled. This is to prevent the swap from being enabled too early and causing a dump.",
                     "data": 2
                 },
                 {
                     "title": "Trade Enabled",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Trade enable is wether the token is enabled for trading yet (can only be enabled and never be disabled). If this is disabled, the token cannot be traded yet.",
                     "data": 3
                 },
                 {
                     "title": "Swap Enabled",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Swap enabled is wether the swapback is enabled or disabled.",
                     "data": 4
                 },
                 {
                     "title": "Fee Active",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Fee active is wether the fee is active or disabled. If this is disabled, the fee will not be collected.",
                     "data": 5
                 },
                 {
                     "title": "Total Auto Buyback",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Total Auto Buyback is the amount of tokens that are bought back automatically by the contract.",
                     "data": 6
                 },
                 {
                     "title": "Total Fee Collected",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Total Fee Collected is the amount of tokens that are collected as fee.",
                     "data": 7
                 },
                 {
                     "title": "Collected Burn Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Collected Burn Fee is the amount of tokens that are collected as burn fee.",
                     "data": 8
                 },
                 {
                     "title": "Collected Marketing Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Collected Marketing Fee is the amount of tokens that are collected as marketing fee.",
                     "data": 9
                 },
                 {
                     "title": "Collected Staking Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Collected Staking Fee is the amount of tokens that are collected as staking fee.",
                     "data": 10
                 },
                 {
                     "title": "Total Fee Redeemed",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Total Fee Redeemed is the amount of tokens that are redeemed from the contract.",
                     "data": 11
                 },
                 {
                     "title": "Redeemed Burn Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Redeemed Burn Fee is the amount of tokens that are redeemed as burn fee.",
                     "data": 12
                 },
                 {
                     "title": "Redeemed Marketing Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Redeemed Marketing Fee is the amount of tokens that are redeemed as marketing fee.",
                     "data": 13
                 },
                 {
                     "title": "Redeemed Staking Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Redeemed Staking Fee is the amount of tokens that are redeemed as staking fee.",
                     "data": 14
                 },
                 {
                     "title": "Buy Burn Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Buy Burn Fee",
                     "data": 15
                 },
                 {
                     "title": "Buy Marketing Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Buy Marketing Fee",
                     "data": 16
                 },
                 {
                     "title": "Buy Staking Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Buy Staking Fee",
                     "data": 17
                 },
                 {
                     "title": "Sell Burn Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Sell Burn Fee",
                     "data": 18
                 },
                 {
                     "title": "Sell Marketing Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Sell Marketing Fee",
                     "data": 19
                 },
                 {
                     "title": "Sell Staking Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Sell Staking Fee",
                     "data": 20
                 },
                 {
                     "title": "Transfer Burn Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Transfer Burn Fee",
                     "data": 21
                 },
                 {
                     "title": "Transfer Marketing Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Transfer Marketing Fee",
                     "data": 22
                 },
                 {
                     "title": "Transfer Staking Fee",
-                    "tooltip": "Coming Soon",
+                    "tooltip": "Real time data of the Transfer Staking Fee",
                     "data": 23
                 }
             ]
