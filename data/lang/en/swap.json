@@ -8,20 +8,12 @@
         {
             "value": "onchain",
             "title": "On Chain"
-        },
-        {
-            "value": "crosschain",
-            "title": "Cross Chain"
         }
     ],
     "content": {
         "onchain": {
             "headline": "OnChain Swap",
             "subheadline": "This is where you swap token within the same network"
-        },
-        "crosschain": {
-            "headline": "CrossChain Swap",
-            "subheadline": "This is where you swap token within the different network"
         }
     }
 }
