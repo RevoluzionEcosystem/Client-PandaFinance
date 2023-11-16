@@ -6,9 +6,9 @@
 
 // SAFU CONTRACT DEVELOPED BY REVOLUZION
 
-//Revoluzion Ecosystem
-//WEB: https://revoluzion.io
-//DAPP: https://revoluzion.app
+// Revoluzion Ecosystem
+// WEB: https://revoluzion.io
+// DAPP: https://revoluzion.app
 
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
@@ -464,8 +464,7 @@ contract PandaFinanc3 is Ownable, ICommonError, IERC20 {
         totalStakingFeeCollected += collectFeeStaking;
         totalBurnFeeCollected += collectFeeBurn;
         totalFeeCollected += collectFee;
-        _balances[from] -= collectFee;
-        _balances[address(this)] += collectFee;
+        _basicTransfer(from, address(this), collectFee);
     }
 
     /* Buyback */
