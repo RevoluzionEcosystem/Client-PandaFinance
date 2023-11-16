@@ -20,7 +20,7 @@ export default function CardStats({item, index}) {
                                 </Button>
                             </TooltipTrigger>
                             <TooltipContent key={`content-${index}`}>
-                                <p className="bg-background px-6 py-3 mb-3 rounded-md text-sm border" key={`text-${index}`}>
+                                <p className="max-w-[300px] bg-background px-6 py-3 mb-3 rounded-md text-sm border" key={`text-${index}`}>
                                     {`${item.tooltip}`}
                                 </p>
                             </TooltipContent>
