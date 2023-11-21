@@ -183,13 +183,13 @@ contract PandaFinanc3 is Ownable, ICommonError, IERC20 {
 
     uint256 public constant BUYFEEMARKETING = 100;
     uint256 public constant SELLFEEMARKETING = 100;
-    uint256 public constant TRANSFERFEEMARKETING = 100;
+    uint256 public constant TRANSFERFEEMARKETING = 0;
     uint256 public constant BUYFEESTAKING = 100;
     uint256 public constant SELLFEESTAKING = 100;
-    uint256 public constant TRANSFERFEESTAKING = 100;
+    uint256 public constant TRANSFERFEESTAKING = 0;
     uint256 public constant BUYFEEBURN = 100;
     uint256 public constant SELLFEEBURN = 100;
-    uint256 public constant TRANSFERFEEBURN = 100;
+    uint256 public constant TRANSFERFEEBURN = 0;
 
     uint256 public totalMarketingFeeCollected = 0;
     uint256 public totalMarketingFeeRedeemed = 0;
