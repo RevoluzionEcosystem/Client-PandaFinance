@@ -30,6 +30,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@hookform/resolvers": "^3.3.2",
         "@radix-ui/react-accordion": "^1.1.2",
         "@radix-ui/react-dialog": "^1.0.5",
         "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -39,6 +40,7 @@
         "@radix-ui/react-select": "^2.0.0",
         "@radix-ui/react-slot": "^1.0.2",
         "@radix-ui/react-tabs": "^1.0.4",
+        "@radix-ui/react-toast": "^1.1.5",
         "@radix-ui/react-tooltip": "^1.0.7",
         "@web3modal/wagmi": "^3.1.0",
         "class-variance-authority": "^0.7.0",
@@ -47,6 +49,7 @@
         "next-themes": "^0.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-hook-form": "^7.48.2",
         "react-icons": "^4.12.0",
         "rubic-sdk": "^4.37.4",
         "shadcn-ui": "^0.4.1",
@@ -54,7 +57,8 @@
         "tailwindcss-animate": "^1.0.7",
         "viem": "^1.19.1",
         "wagmi": "^1.4.6",
-        "web3": "^4.2.2"
+        "web3": "^4.2.2",
+        "zod": "^3.22.4"
     },
     "devDependencies": {
         "@types/node": "20.8.10",
