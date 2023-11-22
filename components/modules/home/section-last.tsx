@@ -27,7 +27,7 @@ export default function SectionLast() {
                         <ChevronRightIcon className="flex-shrink-0 w-4 h-4" />
                     </div>
                 </div>
-                <span className="wrap" aria-hidden="true">
+                <span className="wrap hidden lg:block" aria-hidden="true">
                     <span className="particle one" />
                     <span className="particle two" />
                     <span className="particle three" />
