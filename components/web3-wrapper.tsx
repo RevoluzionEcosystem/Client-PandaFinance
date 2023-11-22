@@ -9,7 +9,7 @@ import info from "../data/lang/en/general.json"
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
 const siteUrl = process.env.SITE_URL
 
-const chains = [ bscTestnet ]
+const chains = [ bsc ]
 const metadata = {
     name: info.project_title,
     description: info.project_description,

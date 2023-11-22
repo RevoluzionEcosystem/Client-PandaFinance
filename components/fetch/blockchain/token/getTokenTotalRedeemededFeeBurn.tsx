@@ -7,7 +7,7 @@ import { nAmount } from "../../../../lib/helpers"
 
 import tokenAbi from "../../../../data/abi.json"
 
-const tokenContract = "0xeFb9513A007F17A89bF6550b6Aa85c27F216C348"
+const tokenContract = "0x08A5144632330eD24CC56a839427dc9C1bFc73b2"
 
 export function GetTokenTotalRedeemedFeeBurn(formatted?: boolean, className?: string) {
     const [mounted, setMounted] = useState(false)
