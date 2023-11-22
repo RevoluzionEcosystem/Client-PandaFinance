@@ -44,7 +44,8 @@
         "view_polygon": "View On PolygonScan",
         "read_whitepaper": "Read Whitepaper",
         "something_wrong": "Oops, something went wrong",
-        "couldnt_find": "Sorry, we couldn't find your page"
+        "couldnt_find": "Sorry, we couldn't find your page",
+        "change_network": "Please click the button below and change your network to Ethereum Mainnet to view all the data"
     },
     "menu": [
         {
@@ -81,7 +82,7 @@
         }
     ],
     "contract": {
-        "token": "0xeFb9513A007F17A89bF6550b6Aa85c27F216C348"
+        "token": "0x08A5144632330eD24CC56a839427dc9C1bFc73b2"
     },
     "link": {
         "presale": "https://pinksale.finance"

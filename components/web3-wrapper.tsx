@@ -2,14 +2,14 @@
 
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 import { WagmiConfig } from 'wagmi'
-import { bsc, bscTestnet } from 'wagmi/chains'
+import { mainnet, polygon, bsc } from 'wagmi/chains'
 
 import info from "../data/lang/en/general.json"
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
 const siteUrl = process.env.SITE_URL
 
-const chains = [ bsc ]
+const chains = [ mainnet, polygon, bsc ]
 const metadata = {
     name: info.project_title,
     description: info.project_description,
@@ -24,6 +24,7 @@ export default function Web3Wrapper({
     children, mode
 }) {
     createWeb3Modal({
+        defaultChain: mainnet,
         wagmiConfig,
         projectId,
         chains,
