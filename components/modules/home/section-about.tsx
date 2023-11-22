@@ -20,7 +20,7 @@ export default function SectionAbout() {
 
                     <div>
                         <Tabs defaultValue="mission" className="">
-                            <TabsList className="grid w-full h-auto grid-cols-2 bg-transparent">
+                            <TabsList className="grid w-full h-auto grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 bg-transparent">
                                 <TabsTrigger value="mission" className="group bg-transparent data-[state=active]:bg-transparent hover:text-foreground">
                                     <div className="w-full flex flex-col text-start hover:bg-secondary hover:text-secondary-foreground group-data-[state=active]:bg-primary group-data-[state=active]:hover:bg-secondary group-data-[state=active]:text-primary-foreground group-data-[state=active]:hover:text-secondary-foreground p-3 md:p-5 rounded-xl">
                                         <TbTargetArrow className="text-[45px]" />
