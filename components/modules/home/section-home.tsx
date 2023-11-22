@@ -12,7 +12,17 @@ export default function SectionHome() {
     return (
         <div className="">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-8">
-                <div className="flex justify-center">
+                <div className="blob-c min-h-[90vh] overflow-hidden absolute mx-auto max-w-[85rem] w-full sm:w-[calc(100%-6rem)] md:w-[calc(100%-7rem)] lg:w-[calc(100%-24rem)]">
+                    <div className="blob one absolute bg-secondary h-[150px] w-[200px]" />
+                    <div className="blob two absolute bg-secondary h-[150px] w-[150px]" />
+                    <div className="blob three absolute bg-primary h-[150px] w-[150px]" />
+                    <div className="blob four absolute bg-secondary h-[100px] w-[100px]" />
+                    <div className="blob five absolute bg-primary h-[100px] w-[80px]" />
+                    <div className="blob six absolute bg-primary h-[70px] w-[100px]" />
+                    <div className="blob seven absolute bg-secondary h-[70px] w-[100px]" />
+                </div>
+
+                <div className="flex animate-bounce justify-center">
                     <a
                         className="group inline-block bg-muted text-foreground hover:text-secondary-foreground hover:bg-secondary border border-border p-1 ps-4 rounded-full shadow-md"
                         href={general["link"].presale}
@@ -41,7 +51,7 @@ export default function SectionHome() {
 
                 <div className="text-center">
                     <div
-                        className="cursor-pointer inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-primary to-secondary hover:from-secondary hover:to-primary shadow-lg shadow-transparent hover:shadow-muted border border-transparent text-panda-white text-sm font-medium rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-muted py-3 px-6"
+                        className="cursor-pointer inline-flex justify-center items-center gap-x-2 text-center bg-gradient-to-tl from-primary to-secondary hover:from-secondary hover:to-primary shadow-lg shadow-transparent hover:shadow-muted border border-transparent text-panda-white text-sm font-medium rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-muted py-3 px-4"
                         onClick={() => router.push("/dashboard")}
                     >
                         {general["terms"].get_started}

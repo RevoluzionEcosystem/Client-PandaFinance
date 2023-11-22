@@ -1,14 +1,15 @@
 "use client"
 import { getHomeOptionIcon } from "../../../lib/helpers"
 
-import general from "../../../data/lang/en/general.json"
+import RevealOnScroll from "../animate/reveal-on-scroll"
+
 import home from "../../../data/lang/en/home.json"
 
 const data = home["data"]
 
 export default function SectionEcosystem() {
     return (
-        <div className="max-w-[85rem]">
+        <div className="max-w-[85rem] mx-auto">
             <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto sm:text-left lg:text-center">
                 <h2 className="text-3xl text-secondary font-bold lg:text-4xl">
                     {home.headline_3}
@@ -27,17 +28,19 @@ export default function SectionEcosystem() {
 
                         <div key={`c-${index}`} className="space-y-6 lg:space-y-10">
                             {item["data"].map((content, index2) => (
-                                <div key={`c-${index2}`} className="flex">
-                                    {getHomeOptionIcon(index, index2)}
-                                    <div key={`cdiv-${index2}`} className="ms-5 sm:ms-8">
-                                        <h3 key={`ch-${index2}`} className="text-base sm:text-lg font-semibold text-foreground">
-                                            {`${content.header}`}
-                                        </h3>
-                                        <p key={`cp-${index2}`} className="mt-1 text-muted-foreground">
-                                            {`${content.content}.`}
-                                        </p>
+                                <RevealOnScroll key={`ros-${index2}`}>
+                                    <div key={`c-${index2}`} className="flex">
+                                        {getHomeOptionIcon(index, index2)}
+                                        <div key={`cdiv-${index2}`} className="ms-5 sm:ms-8">
+                                            <h3 key={`ch-${index2}`} className="text-base sm:text-lg font-semibold text-foreground">
+                                                {`${content.header}`}
+                                            </h3>
+                                            <p key={`cp-${index2}`} className="mt-1 text-muted-foreground">
+                                                {`${content.content}.`}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </RevealOnScroll>
                             ))}
                         </div>
                     </div>
@@ -52,17 +55,19 @@ export default function SectionEcosystem() {
 
                         <div key={`c-${index}`} className="space-y-6 lg:space-y-10">
                             {item["data"].map((content, index2) => (
-                                <div key={`c-${index2}`} className="flex">
-                                    {getHomeOptionIcon(Number(Number(index) + 4), index2)}
-                                    <div className="ms-5 sm:ms-8">
-                                        <h3 className="text-base sm:text-lg font-semibold text-foreground">
-                                            {`${content.header}`}
-                                        </h3>
-                                        <p className="mt-1 text-muted-foreground">
-                                            {`${content.content}.`}
-                                        </p>
+                                <RevealOnScroll key={`ros-${index2}`}>
+                                    <div key={`c-${index2}`} className="flex">
+                                        {getHomeOptionIcon(Number(Number(index) + 4), index2)}
+                                        <div className="ms-5 sm:ms-8">
+                                            <h3 className="text-base sm:text-lg font-semibold text-foreground">
+                                                {`${content.header}`}
+                                            </h3>
+                                            <p className="mt-1 text-muted-foreground">
+                                                {`${content.content}.`}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </RevealOnScroll>
                             ))}
                         </div>
                     </div>

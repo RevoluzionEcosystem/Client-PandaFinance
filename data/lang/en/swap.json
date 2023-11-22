@@ -6,14 +6,30 @@
     "button_2": "Back to homepage",
     "selector": [
         {
-            "value": "onchain",
-            "title": "On Chain"
+            "value": "ethereum",
+            "title": "Ethereum"
+        },
+        {
+            "value": "polygon",
+            "title": "Polygon"
+        },
+        {
+            "value": "binance",
+            "title": "Binance"
         }
     ],
     "content": {
-        "onchain": {
-            "headline": "OnChain Swap",
-            "subheadline": "This is where you swap token within the same network"
+        "ethereum": {
+            "headline": "OnChain Swap for Ethereum Mainnet",
+            "subheadline": "This is where you swap token within the Ethereum Mainnet network"
+        },
+        "polygon": {
+            "headline": "OnChain Swap for Polygon Mainnet",
+            "subheadline": "This is where you swap token within the Polygon Mainnet network"
+        },
+        "binance": {
+            "headline": "OnChain Swap for Binance Smart Chain Mainnet",
+            "subheadline": "This is where you swap token within the Binance Smart Chain Mainnet network"
         }
     }
 }

@@ -6,10 +6,10 @@ import { Skeleton } from "../../ui/skeleton"
 
 import BackHomeButton from "../button/back-home"
 import GoExplorerButton from "../button/go-explorer"
+import Pandaswap from "./pandaswap"
 
 import general from "../../../data/lang/en/general.json"
 import swap from "../../../data/lang/en/swap.json"
-import Pandaswap from "./pandaswap"
     
 const terms = general["terms"]
 

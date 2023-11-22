@@ -11,7 +11,7 @@ export default function SectionLast() {
 
     return (
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            <div className="text-center py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-tl from-primary to-secondary rounded-xl">
+            <div className="relative text-center py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-tl from-primary to-secondary rounded-xl">
                 <h1 className="block text-2xl font-bold text-panda-white sm:text-4xl">
                     {`${home.headline_4}`}
                 </h1>
@@ -27,6 +27,20 @@ export default function SectionLast() {
                         <ChevronRightIcon className="flex-shrink-0 w-4 h-4" />
                     </div>
                 </div>
+                <span className="wrap" aria-hidden="true">
+                    <span className="particle one" />
+                    <span className="particle two" />
+                    <span className="particle three" />
+                    <span className="particle four" />
+                    <span className="particle five" />
+                    <span className="particle six" />
+                    <span className="particle seven" />
+                    <span className="particle eight" />
+                    <span className="particle nine" />
+                    <span className="particle ten" />
+                    <span className="particle eleven" />
+                    <span className="particle twelve" />
+                </span>
             </div>
         </div>
     )

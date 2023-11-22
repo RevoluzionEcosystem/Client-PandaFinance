@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { Toaster } from "../components/ui/toaster"
 
 import Layout from "../components/modules/layout"
 
@@ -15,6 +16,7 @@ export default function RootLayout({
                 <Layout>
                     {children}
                 </Layout>
+                <Toaster />
             </body>
        </html>
     )
