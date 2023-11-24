@@ -11,9 +11,15 @@
         "global": "Global",
         "loading": "Loading",
         "search": "Search",
+        "value": "Value",
+        "tokenomics": "Tokenomics",
+        "tokens": "Tokens",
+        "amount": "Amount",
         "trade": "Trade",
+        "socials": "Socials",
         "calculate": "Calculate",
         "breadcrumbs": "Breadcrumb",
+        "vest_lock": "Vesting / Lock",
         "get_started": "Get Started",
         "go_home": "Go To Homepage",
         "go_back": "Go Back",
@@ -87,6 +93,81 @@
     "link": {
         "presale": "https://pinksale.finance"
     },
+    "social": [
+        {
+            "id": "twitter",
+            "title": "Twitter",
+            "link": "http://www.twitter.com/@pandafinance101"
+        },
+        {
+            "id": "telegram",
+            "title": "Telegram",
+            "link": "https://t.me/PandaFinanc3"
+        },
+        {
+            "id": "youtube",
+            "title": "Youtube",
+            "link": "http://www.youtube.com/@PandaFinanc3"
+        },
+        {
+            "id": "facebook",
+            "title": "Facebook",
+            "link": ""
+        },
+        {
+            "id": "reddit",
+            "title": "Reddit",
+            "link": "https://www.reddit.com/r/Pandafinanc3"
+        },
+        {
+            "id": "github",
+            "title": "GitHub",
+            "link": "https://github.com/PandaFinanc3"
+        }
+    ],
+    "pinksale": {
+        "title": "PinkSale",
+        "link": "https://pinksale.finance",
+        "img-light": "/assets/logo-pinksale-light.png",
+        "img-dark": "/assets/logo-pinksale-dark.png"
+    },
+    "partner": [
+        {
+            "id": "pinksale",
+            "title": "PinkSale",
+            "link": "https://pinksale.finance",
+            "img-light": "/assets/logo-pinksale-light.png",
+            "img-dark": "/assets/logo-pinksale-dark.png"
+        },
+        {
+            "id": "revoluzion",
+            "title": "Revoluzion",
+            "link": "https://revoluzion.app",
+            "img-light": "/assets/logo-revoluzion-light.png",
+            "img-dark": "/assets/logo-revoluzion-dark.png"
+        },
+        {
+            "id": "dexview",
+            "title": "DEXView",
+            "link": "https://dexview.com",
+            "img-light": "/assets/logo-dexview-light.png",
+            "img-dark": "/assets/logo-dexview-dark.png"
+        },
+        {
+            "id": "solidproof",
+            "title": "SOLIDProof",
+            "link": "https://solidproof.io",
+            "img-light": "/assets/logo-solidproof-light.png",
+            "img-dark": "/assets/logo-solidproof-dark.png"
+        },
+        {
+            "id": "wakandawhales",
+            "title": "Wakanda Whales",
+            "link": "https://t.me/wakandawhales",
+            "img-light": "/assets/logo-wakandawhales-light.png",
+            "img-dark": "/assets/logo-wakandawhales-dark.png"
+        }
+    ],
     "development": {
         "name": "Revoluzion",
         "link": "https://revoluzion.app",

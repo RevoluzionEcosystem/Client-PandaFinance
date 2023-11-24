@@ -13,6 +13,59 @@
     "subheadline_3": "Explore our comprehensive DeFi ecosystem, featuring a user-friendly wallet, a decentralized exchange, secure P2P trading, yield farming, staking, educational resources, and more",
     "headline_4": "Ready to Begin Your Journey",
     "subheadline_4": "Sign Up Now to Embark on an Enlightening Exploration of the Decentralized Financial Landscape With Panda Financ3",
+    "headline_5": "Unlocking Tokenomics' Potential",
+    "subheadline_5": "Discover the Power and Purpose Behind Panda Financ3 Tokenomics",
+    "subheadline_6": "Discover the Strength of Our Network and How We Create Impact Together",
+    "chart": [
+        {
+            "title": "Presale",
+            "value": 3300000000,
+            "lock": "N/A",
+            "color": "#ff8c00"
+        },
+        {
+            "title": "Liquidity",
+            "value": 2200000000,
+            "lock": "N/A",
+            "color": "#e81123"
+        },
+        {
+            "title": "Staking",
+            "value": 2200000000,
+            "lock": "N/A",
+            "color": "#ec008c"
+        },
+        {
+            "title": "Centralized Exchange (CEX) Listings",
+            "value": 1100000000,
+            "lock": "Locked for 6 months",
+            "color": "#68217a"
+        },
+        {
+            "title": "Research and Development",
+            "value": 550000000,
+            "lock": "Locked for 18 months",
+            "color": "#00188f"
+        },
+        {
+            "title": "Community and Rewards",
+            "value": 550000000,
+            "lock": "N/A",
+            "color": "#00bcf2"
+        },
+        {
+            "title": "Team",
+            "value": 550000000,
+            "lock": "First 10% released in 90 days, then 3% every 60 days",
+            "color": "#00b294"
+        },
+        {
+            "title": "Emergency and Long-Term Stability",
+            "value": 550000000,
+            "lock": "Locked for 18 months",
+            "color": "#009e49"
+        }
+    ],
     "data": [
         {
             "title": "Panda Financ3 Wallet",
