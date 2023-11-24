@@ -14,14 +14,10 @@ export default function SectionPartner() {
                 </h2>
             </div>
 
-            <div className="grid grid-cols-5 justify-center gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 justify-center gap-x-6">
                 {general["partner"].map((item, index) => (
                     <a key={`link-${index}`}  href={item.link} title={item.title} target="_blank">
-                        {getCssValue("--background") === "#FAFAFAFF" ? (
-                            <img className="w-full max-w-[500px]" key={`logol-${index}`} src={item["img-light"]} alt={item.title} />
-                        ) : (
-                            <img className="w-full max-w-[500px]" key={`logod-${index}`} src={item["img-dark"]} alt={item.title} />
-                        )}
+                        <img className="w-full max-w-[500px]" key={`logo-${index}`} src={{getCssValue("--background") === "#FAFAFAFF" ? item["img-light"] : item["img-dark"]} alt={item.title} />
                     </a>
                 ))}
             </div>
