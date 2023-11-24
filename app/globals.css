@@ -90,8 +90,7 @@
     * {
         @apply border-border;
     }
-    *::selection:not(img),
-    *::selection:not(.gradient){
+    *::selection:not(img) {
         @apply bg-foreground text-background;
     }
     *::-webkit-scrollbar {
@@ -114,7 +113,7 @@
     a {
         @apply font-bold text-primary hover:text-foreground;
     }
-    .gradient::selection {
+    .gradient p::selection {
         background: var(--foreground);
         color: var(--background);
         -webkit-background-clip: unset;
