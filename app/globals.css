@@ -90,7 +90,8 @@
     * {
         @apply border-border;
     }
-    *::selection:not(img){
+    *::selection:not(img),
+    *::selection:not(.gradient){
         @apply bg-foreground text-background;
     }
     *::-webkit-scrollbar {
