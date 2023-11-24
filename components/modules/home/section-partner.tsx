@@ -17,7 +17,7 @@ export default function SectionPartner() {
             <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 justify-center gap-x-6">
                 {general["partner"].map((item, index) => (
                     <a key={`link-${index}`}  href={item.link} title={item.title} target="_blank">
-                        <img className="w-full max-w-[500px]" key={`logo-${index}`} src={getCssValue("--background") === "#FAFAFAFF" ? item["img-light"] : item["img-dark"]} alt={item.title} />
+                        <img className="mx-auto w-full max-w-[500px]" key={`logo-${index}`} src={getCssValue("--background") === "#FAFAFAFF" ? item["img-light"] : item["img-dark"]} alt={item.title} />
                     </a>
                 ))}
             </div>
