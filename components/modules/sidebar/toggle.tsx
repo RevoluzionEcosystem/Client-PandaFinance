@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTrigger } from "../../ui/sheet"
 import { Button } from "../../ui/button"
 import { ScrollArea } from "../../ui/scroll-area"
+import { getSocialIcon } from "../../../lib/helpers"
 
 import SidebarNav from "./sidebar-nav"
 import SidebarLogoSmall from "./sidebar-logoSmall"
