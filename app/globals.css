@@ -114,8 +114,10 @@
         @apply font-bold text-primary hover:text-foreground;
     }
     .gradient::selection {
-        background: var(--background);
-        color: var(--foreground);
+        background: var(--foreground);
+        color: var(--background);
+        -webkit-background-clip: unset;
+                background-clip: unset;
     }
     .gradient {
         background: -webkit-linear-gradient(var(--primary), var(--secondary));
