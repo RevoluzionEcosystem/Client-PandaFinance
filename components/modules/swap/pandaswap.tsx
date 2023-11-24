@@ -8,7 +8,7 @@ import swap from "../../../data/lang/en/swap.json"
 
 export default function Pandaswap() {
     return (
-        <Tabs defaultValue="binance" className="">
+        <Tabs defaultValue="ethereum" className="">
             <TabsList className="grid w-full grid-cols-3 max-w-fit">
                 {swap["selector"].map((item, index) => (
                     <TabsTrigger key={index} value={item.value}>

@@ -2,6 +2,7 @@
 
 import { ChevronRightIcon } from "@radix-ui/react-icons"
 import { useRouter } from "next/navigation"
+import { getCssValue } from "../../../lib/helpers"
 
 import general from "../../../data/lang/en/general.json"
 import home from "../../../data/lang/en/home.json"
@@ -22,20 +23,26 @@ export default function SectionHome() {
                     <div className="blob seven absolute bg-secondary h-[70px] w-[100px]" />
                 </div>
 
-                <div className="flex animate-bounce justify-center">
-                    <a
-                        className="group inline-block bg-muted text-foreground hover:text-secondary-foreground hover:bg-secondary border border-border p-1 ps-4 rounded-full shadow-md"
-                        href={general["link"].presale}
-                        target="_blank"
-                    >
-                        <p className="me-2 inline-block text-sm">
-                            {home.kicker_1}
-                        </p>
-                        <span className="border border-foreground bg-muted group-hover:border-transparent group-hover:bg-muted py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full text-foreground font-semibold text-sm">
-                            <ChevronRightIcon className="flex-shrink-0 w-4 h-4" />
-                        </span>
-                    </a>
-                </div>
+                <a
+                    href={general["link"].presale}
+                    target="_blank"
+                >
+                    <div className="group flex animate-bounce w-fit mx-auto justify-center bg-muted text-foreground hover:text-secondary-foreground hover:bg-secondary rounded-full shadow-md">
+                        {getCssValue("--background") === "#FAFAFAFF" ? (
+                            <img className="w-full max-w-[150px] border border-r-foreground" src={general["pinksale"]["img-light"]} alt={general["pinksale"].title} />
+                        ) : (
+                            <img className="w-full max-w-[150px] border border-r-foreground" src={general["pinksale"]["img-dark"]} alt={general["pinksale"].title} />
+                        )}
+                        <div className="inline-block text-foreground group:hover:text-secondary-foreground border border-border p-1 ps-4">
+                            <p className="me-2 inline-block text-sm">
+                                {home.kicker_1}
+                            </p>
+                            <span className="border border-foreground bg-muted group-hover:border-transparent group-hover:bg-muted py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full text-foreground font-semibold text-sm">
+                                <ChevronRightIcon className="flex-shrink-0 w-4 h-4" />
+                            </span>
+                        </div>
+                    </div>
+                </a>
 
                 <div className="max-w-3xl text-center mx-auto">
                     <h1 className="block font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl">

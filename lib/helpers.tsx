@@ -2,6 +2,7 @@
 
 import { DashboardIcon, HomeIcon, SizeIcon } from "@radix-ui/react-icons"
 import { TbBellCheck, TbChartHistogram, TbDeviceImacStar, TbEaseInOutControlPoints, TbFileDescription, TbReportMoney, TbShieldCheckFilled, TbUserCheck, TbUsersGroup } from "react-icons/tb"
+import { FaFacebook, FaGithubAlt, FaReddit, FaTelegram, FaXTwitter, FaYoutube } from "react-icons/fa6"
 import { useEffect, useState } from "react"
 import { GetTokenSupplyCirculating } from "../components/fetch/blockchain/token/getTokenSupplyCirculating"
 import { GetTokenSupplyTotal } from "../components/fetch/blockchain/token/getTokenSupplyTotal"
@@ -44,7 +45,7 @@ export const nFormatter = (number: number) => {
     return scaled.toFixed(3) + " " + suffix
 }
 
-export const nAmount = (number: number, decimals: number) => {
+export const nAmount = (number: number, decimals: number, fixed?: number) => {
     var tier = Math.log10(Math.abs(number)) / 3 | 0
 
     if(tier <= 0) return Number(number).toFixed(decimals)
@@ -53,6 +54,8 @@ export const nAmount = (number: number, decimals: number) => {
     var scale = Math.pow(10, tier * 3)
 
     var scaled = number / scale
+
+    if(fixed > 0) return scaled.toFixed(fixed) + " " + suffix
 
     return scaled.toFixed(3) + " " + suffix
 }
@@ -183,5 +186,26 @@ export function getDashboardInfo(id: number) {
     }
     if (id === 23) {
         return GetTokenFeeTransferStaking(true, "w-full h-9 bg-muted")
+    }
+}
+
+export function getSocialIcon(id: string) {
+    if (id === "twitter") {
+        return <FaXTwitter className="h-[2rem] w-[2rem] " />
+    }
+    if (id === "telegram") {
+        return <FaTelegram className="h-[2rem] w-[2rem] " />
+    }
+    if (id === "youtube") {
+        return <FaYoutube className="h-[2rem] w-[2rem] " />
+    }
+    if (id === "facebook") {
+        return <FaFacebook className="h-[2rem] w-[2rem] " />
+    }
+    if (id === "reddit") {
+        return <FaReddit className="h-[2rem] w-[2rem] " />
+    }
+    if (id === "github") {
+        return <FaGithubAlt className="h-[2rem] w-[2rem] " />
     }
 }

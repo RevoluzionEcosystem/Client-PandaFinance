@@ -12,6 +12,7 @@ import { Input } from "../../ui/input"
 import { TabsContent } from "../../ui/tabs"
 
 import general from "../../../data/lang/en/general.json"
+import whitelist from "../../../data/lang/en/whitelist.json"
 import swap from "../../../data/lang/en/swap.json"
 
 const configuration: Configuration = {
@@ -109,7 +110,7 @@ export default function SwapEthereum() {
                                                     <SelectLabel>
                                                         {general["terms"].from_token}
                                                     </SelectLabel>
-                                                    {general["network"].map((item, index) => (
+                                                    {whitelist["ethereum"]["from"].map((item, index) => (
                                                         <SelectItem key={index} value={item.value}>
                                                             {item.title}
                                                         </SelectItem>
@@ -141,7 +142,7 @@ export default function SwapEthereum() {
                                                     <SelectLabel>
                                                         {general["terms"].to_token}
                                                     </SelectLabel>
-                                                    {general["network"].map((item, index) => (
+                                                    {whitelist["ethereum"]["to"].map((item, index) => (
                                                         <SelectItem key={index} value={item.value}>
                                                             {item.title}
                                                         </SelectItem>
