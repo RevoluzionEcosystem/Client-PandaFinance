@@ -27,13 +27,9 @@ export default function SectionHome() {
                     href={general["link"].presale}
                     target="_blank"
                 >
-                    <div className="group flex animate-bounce w-fit mx-auto justify-center bg-muted text-foreground hover:text-secondary-foreground hover:bg-secondary rounded-full shadow-md">
-                        {getCssValue("--background") === "#FAFAFAFF" ? (
-                            <img className="w-full max-w-[150px] border border-r-foreground" src={general["pinksale"]["img-light"]} alt={general["pinksale"].title} />
-                        ) : (
-                            <img className="w-full max-w-[150px] border border-r-foreground" src={general["pinksale"]["img-dark"]} alt={general["pinksale"].title} />
-                        )}
-                        <div className="inline-block text-foreground group:hover:text-secondary-foreground border border-border p-1 ps-4">
+                    <div className="group flex border animate-bounce w-fit mx-auto justify-center bg-muted text-foreground hover:text-secondary-foreground hover:bg-secondary rounded-full shadow-md">
+                        <img className="w-full max-w-[150px] border border-transparent border-r-foreground" src={getCssValue("--background") === "#FAFAFAFF" ? general["pinksale"]["img-light"] : general["pinksale"]["img-dark"]} alt={general["pinksale"].title} />
+                        <div className="inline-block text-foreground group:hover:text-secondary-foreground p-1 ps-4">
                             <p className="me-2 inline-block text-sm">
                                 {home.kicker_1}
                             </p>
