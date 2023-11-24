@@ -113,13 +113,15 @@
     a {
         @apply font-bold text-primary hover:text-foreground;
     }
-    .gradient {
-      background: -webkit-linear-gradient(var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-              background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .gradient::selection {
+        @apply bg-foreground text-background;
     }
-
+    .gradient {
+        background: -webkit-linear-gradient(var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+                background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .panda {
         transform: scale(1.2) translateY(40px);
         zoom: 1.2;
