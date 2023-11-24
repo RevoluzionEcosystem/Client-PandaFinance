@@ -113,12 +113,11 @@
     a {
         @apply font-bold text-primary hover:text-foreground;
     }
-    .gradient p::selection {
-        background: var(--foreground);
-        color: var(--background);
+    .gradient::selection {
+        background: var(--primary);
         -webkit-background-clip: unset;
                 background-clip: unset;
-        -webkit-text-fill-color: inherit;
+        -webkit-text-fill-color: var(--primary-foreground);
     }
     .gradient {
         background: -webkit-linear-gradient(var(--primary), var(--secondary));
