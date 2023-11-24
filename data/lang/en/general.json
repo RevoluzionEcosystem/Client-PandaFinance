@@ -71,6 +71,12 @@
             "name": "Swap",
             "link": "/swap",
             "type": "internal"
+        },
+        {
+            "id": "docs",
+            "name": "Documentation",
+            "link": "https://pandafinanc3.gitbook.io/docs/",
+            "type": "external"
         }
     ],
     "network": [
@@ -108,11 +114,6 @@
             "id": "youtube",
             "title": "Youtube",
             "link": "http://www.youtube.com/@PandaFinanc3"
-        },
-        {
-            "id": "facebook",
-            "title": "Facebook",
-            "link": ""
         },
         {
             "id": "reddit",
