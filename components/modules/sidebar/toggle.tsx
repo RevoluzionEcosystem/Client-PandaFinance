@@ -49,6 +49,19 @@ export default function SidebarToggle() {
                             <div className="grid gap-4 py-4">
                                 <SheetClose>
                                     <SidebarNav />
+                                    <br />
+                                    <span className="text-sm font-semibold">
+                                        {general["terms"].socials}
+                                    </span>
+                                    <div className="grid grid-cols-3">
+                                        {general["social"].map((item, index) => (
+                                            <a key={`link-${index}`} href={item.link} target="_blank">
+                                                <Button key={`social-${index}`} variant="basic" size="icon">
+                                                    {getSocialIcon(item.id)}
+                                                </Button>
+                                            </a>
+                                        ))}
+                                    </div>
                                 </SheetClose>
 
                             </div>
