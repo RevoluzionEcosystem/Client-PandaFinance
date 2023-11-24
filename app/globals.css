@@ -118,6 +118,7 @@
         color: var(--background);
         -webkit-background-clip: unset;
                 background-clip: unset;
+        -webkit-text-fill-color: inherit;
     }
     .gradient {
         background: -webkit-linear-gradient(var(--primary), var(--secondary));
