@@ -1,6 +1,6 @@
 "use client"
 
-import { DashboardIcon, HomeIcon, SizeIcon, FileTextIcon } from "@radix-ui/react-icons"
+import { DashboardIcon, HomeIcon, ReaderIcon, SizeIcon } from "@radix-ui/react-icons"
 import { TbBellCheck, TbChartHistogram, TbDeviceImacStar, TbEaseInOutControlPoints, TbFileDescription, TbReportMoney, TbShieldCheckFilled, TbUserCheck, TbUsersGroup } from "react-icons/tb"
 import { FaFacebook, FaGithubAlt, FaReddit, FaTelegram, FaXTwitter, FaYoutube } from "react-icons/fa6"
 import { useEffect, useState } from "react"
@@ -82,8 +82,8 @@ export function getNavIcon(id: string) {
     if (id === "swap") {
         return <SizeIcon className="mr-1 h-[1rem] w-[1rem] " />
     }
-    if (id === "docs") {
-        return <FileTextIcon className="mr-1 h-[1rem] w-[1rem] " />
+    if (id === "documentation") {
+        return <ReaderIcon className="mr-1 h-[1rem] w-[1rem] " />
     }
 }
 
@@ -211,4 +211,8 @@ export function getSocialIcon(id: string) {
     if (id === "github") {
         return <FaGithubAlt className="h-[2rem] w-[2rem] " />
     }
+}
+
+export const truncateAddress = (address: string, first: number, last: number, filler?: string) => {
+    return address.substring(0, first) + (filler ? filler : "...")  + address.substring(address.length - last)
 }

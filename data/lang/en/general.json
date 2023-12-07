@@ -16,9 +16,16 @@
         "tokens": "Tokens",
         "amount": "Amount",
         "trade": "Trade",
+        "trading": "Trading",
         "socials": "Socials",
         "calculate": "Calculate",
+        "calculating": "Calculating",
+        "dex": "DEX",
+        "to_amount": "To Amount",
+        "action": "Action",
         "breadcrumbs": "Breadcrumb",
+        "calculating_for": "Calculating For",
+        "switch_network": "Switch Network",
         "vest_lock": "Vesting / Lock",
         "get_started": "Get Started",
         "go_home": "Go To Homepage",
@@ -73,7 +80,7 @@
             "type": "internal"
         },
         {
-            "id": "docs",
+            "id": "documentation",
             "name": "Documentation",
             "link": "https://pandafinanc3.gitbook.io/docs",
             "type": "external"

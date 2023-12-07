@@ -1,0 +1,18 @@
+{
+    "root": {
+        "title": "Panda Financ3",
+        "description": "Panda Financ3 decentralized application (dApp) is powered by Revoluzion"
+    },
+    "home": {
+        "title": "Welcome to Panda Financ3",
+        "description": "Your Gateway to the Future of Decentralized Finance. 🐼✨"
+    },
+    "dashboard": {
+        "title": "PandaFinanc3 Dashboard",
+        "description": "Token Insights at a Glance"
+    },
+    "swap": {
+        "title": "PandaSwap (Decentralized Exchange)",
+        "description": "One Platform, Endless Possibilities"
+    }
+}

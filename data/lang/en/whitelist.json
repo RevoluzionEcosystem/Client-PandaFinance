@@ -2,42 +2,234 @@
     "ethereum": {
         "from": [
             {
-                "title": "0x0",
-                "value": "0x0"
+                "title": "ETH",
+                "name": "Ethereum",
+                "value": "0x0000000000000000000000000000000000000000",
+                "imgLink": "/assets/tokens/ETH.webp"
+            },
+            {
+                "title": "WETH",
+                "name": "Wrapped Ether",
+                "value": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "imgLink": "/assets/tokens/WETH.webp"
+            },
+            {
+                "title": "PAF",
+                "name": "PandaFinanc3",
+                "value": "0x08A5144632330eD24CC56a839427dc9C1bFc73b2",
+                "imgLink": "/assets/tokens/PAF.webp"
+            },
+            {
+                "title": "USDC",
+                "name": "USD Coin",
+                "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "imgLink": "/assets/tokens/USDC.webp"
+            },
+            {
+                "title": "USDT",
+                "name": "Tether USD",
+                "value": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                "imgLink": "/assets/tokens/USDT.webp"
             }
         ],
         "to": [
             {
-                "title": "0x0",
-                "value": "0x0"   
+                "title": "ETH",
+                "name": "Ethereum",
+                "value": "0x0000000000000000000000000000000000000000",
+                "imgLink": "/assets/tokens/ETH.webp"
+            },
+            {
+                "title": "WETH",
+                "name": "Wrapped Ether",
+                "value": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "imgLink": "/assets/tokens/WETH.webp"
+            },
+            {
+                "title": "PAF",
+                "name": "PandaFinanc3",
+                "value": "0x08A5144632330eD24CC56a839427dc9C1bFc73b2",
+                "imgLink": "/assets/tokens/PAF.webp"
+            },
+            {
+                "title": "USDC",
+                "name": "USD Coin",
+                "value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "imgLink": "/assets/tokens/USDC.webp"
+            },
+            {
+                "title": "USDT",
+                "name": "Tether USD",
+                "value": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                "imgLink": "/assets/tokens/USDT.webp"
             }
         ]
     },
     "polygon": {
         "from": [
             {
-                "title": "0x0",
-                "value": "0x0"
+                "title": "MATIC",
+                "name": "Matic Network",
+                "value": "0x0000000000000000000000000000000000000000",
+                "imgLink": "/assets/tokens/MATIC.webp"
+            },
+            {
+                "title": "WETH",
+                "name": "Wrapped Ether",
+                "value": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "imgLink": "/assets/tokens/WETH.webp"
+            },
+            {
+                "title": "WMATIC",
+                "name": "Wrapped Matic",
+                "value": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "imgLink": "/assets/tokens/WMATIC.webp"
+            },
+            {
+                "title": "USDC.e",
+                "name": "USD Coin (PoS)",
+                "value": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "imgLink": "/assets/tokens/USDC.webp"
+            },
+            {
+                "title": "USDT",
+                "name": "(PoS) Tether USD",
+                "value": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "imgLink": "/assets/tokens/USDT.webp"
             }
         ],
         "to": [
             {
-                "title": "0x0",
-                "value": "0x0"   
+                "title": "MATIC",
+                "name": "Matic Network",
+                "value": "0x0000000000000000000000000000000000000000",
+                "imgLink": "/assets/tokens/MATIC.webp"
+            },
+            {
+                "title": "WETH",
+                "name": "Wrapped Ether",
+                "value": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "imgLink": "/assets/tokens/WETH.webp"
+            },
+            {
+                "title": "WMATIC",
+                "name": "Wrapped Matic",
+                "value": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "imgLink": "/assets/tokens/WMATIC.webp"
+            },
+            {
+                "title": "USDC.e",
+                "name": "USD Coin (PoS)",
+                "value": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "imgLink": "/assets/tokens/USDC.webp"
+            },
+            {
+                "title": "USDT",
+                "name": "(PoS) Tether USD",
+                "value": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "imgLink": "/assets/tokens/USDT.webp"
             }
         ]
     },
     "binance": {
         "from": [
             {
-                "title": "0x0",
-                "value": "0x0"
+                "title": "BNB",
+                "name": "Binance Coin",
+                "value": "0x0000000000000000000000000000000000000000",
+                "imgLink": "/assets/tokens/BNB.webp"
+            },
+            {
+                "title": "WBNB",
+                "name": "Wrapped BNB",
+                "value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                "imgLink": "/assets/tokens/WBNB.webp"
+            },
+            {
+                "title": "RVZ",
+                "name": "Revoluzion",
+                "value": "0x7d89c67d3c4e72e8c5c64be201dc225f99d16aca",
+                "imgLink": "/assets/tokens/RVZ.webp"
+            },
+            {
+                "title": "APOC",
+                "name": "Apocalypse",
+                "value": "0x700AfD366D8cD7CC30f17E215F83BEeaf92459DF",
+                "imgLink": "/assets/tokens/APOC.webp"
+            },
+            {
+                "title": "LZN",
+                "name": "Luzion Protocol",
+                "value": "0x291C4e4277F8717e0552D108dBd7f795a9fEF016",
+                "imgLink": "/assets/tokens/LZN.webp"
+            },
+            {
+                "title": "BUSD",
+                "name": "BUSD Token",
+                "value": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                "imgLink": "/assets/tokens/BUSD.webp"
+            },
+            {
+                "title": "USDC",
+                "name": "USD Coin",
+                "value": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+                "imgLink": "/assets/tokens/USDC.webp"
+            },
+            {
+                "title": "USDT",
+                "name": "Tether USD",
+                "value": "0x55d398326f99059ff775485246999027b3197955",
+                "imgLink": "/assets/tokens/USDT.webp"
             }
         ],
         "to": [
             {
-                "title": "0x0",
-                "value": "0x0"   
+                "title": "BNB",
+                "name": "Binance Coin",
+                "value": "0x0000000000000000000000000000000000000000",
+                "imgLink": "/assets/tokens/BNB.webp"
+            },
+            {
+                "title": "WBNB",
+                "name": "Wrapped BNB",
+                "value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                "imgLink": "/assets/tokens/WBNB.webp"
+            },
+            {
+                "title": "RVZ",
+                "name": "Revoluzion",
+                "value": "0x7d89c67d3c4e72e8c5c64be201dc225f99d16aca",
+                "imgLink": "/assets/tokens/RVZ.webp"
+            },
+            {
+                "title": "APOC",
+                "name": "Apocalypse",
+                "value": "0x700AfD366D8cD7CC30f17E215F83BEeaf92459DF",
+                "imgLink": "/assets/tokens/APOC.webp"
+            },
+            {
+                "title": "LZN",
+                "name": "Luzion Protocol",
+                "value": "0x291C4e4277F8717e0552D108dBd7f795a9fEF016",
+                "imgLink": "/assets/tokens/LZN.webp"
+            },
+            {
+                "title": "BUSD",
+                "name": "BUSD Token",
+                "value": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                "imgLink": "/assets/tokens/BUSD.webp"
+            },
+            {
+                "title": "USDC",
+                "name": "USD Coin",
+                "value": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+                "imgLink": "/assets/tokens/USDC.webp"
+            },
+            {
+                "title": "USDT",
+                "name": "Tether USD",
+                "value": "0x55d398326f99059ff775485246999027b3197955",
+                "imgLink": "/assets/tokens/USDT.webp"
             }
         ]
     }
