@@ -267,8 +267,8 @@ export default function SwapBinance() {
                                     <div key={`amount-${index}`} className="my-auto">
                                         {(Number(item.trade.to._weiAmount.c[0]) / Number(Math.pow(10, Number(item.trade.to.decimals)))).toFixed(5)} {item.trade.to.symbol}
                                     </div>
-                                    <Button className="my-auto" variant="primary" key={`button-${index}`} onClick={chain.id !== chains[1].id ? () => switchNetwork?.(chains[1].id) : () => trade(item.index)}>
-                                        {chain.id !== chains[1].id ? terms.switch_network : terms.trade}
+                                    <Button className="my-auto" variant="primary" key={`button-${index}`} onClick={chain.id !== chains[2].id ? () => switchNetwork?.(chains[2].id) : () => trade(item.index)}>
+                                        {chain.id !== chains[2].id ? terms.switch_network : terms.trade}
                                     </Button>
                                 </div>
                             ))}
