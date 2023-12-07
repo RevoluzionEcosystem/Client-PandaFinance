@@ -1,8 +1,12 @@
+"use client"
+
 import * as z from "zod"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { SDK, BLOCKCHAIN_NAME, Configuration, CHAIN_TYPE, OnChainTradeType, OnChainTrade, EvmOnChainTrade } from "rubic-sdk"
+import { useState } from "react"
+import { useAccount, useNetwork, useSwitchNetwork } from "wagmi"
+import { SDK, BLOCKCHAIN_NAME, CHAIN_TYPE, OnChainTrade, OnChainTradeError } from "rubic-sdk"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue } from "../../ui/select"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "../../ui/form"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../ui/card"
@@ -10,36 +14,13 @@ import { toast } from "../../ui/use-toast"
 import { Button } from "../../ui/button"
 import { Input } from "../../ui/input"
 import { TabsContent } from "../../ui/tabs"
+import { truncateAddress } from "../../../lib/helpers"
+import { configuration } from "../../../constant/configuration"
 
 import general from "../../../data/lang/en/general.json"
 import whitelist from "../../../data/lang/en/whitelist.json"
 import swap from "../../../data/lang/en/swap.json"
 
-const configuration: Configuration = {
-    rpcProviders: {
-        [BLOCKCHAIN_NAME.ETHEREUM]: {
-            rpcList: [
-                "https://ethereum.publicnode.com",
-            ]
-        },
-        [BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN]: {
-            rpcList: [
-                "https://bsc.publicnode.com",
-            ]
-        },
-        [BLOCKCHAIN_NAME.POLYGON]: {
-            rpcList: [
-                "https://polygon-bor.publicnode.com",
-            ]
-        }
-    },
-    providerAddress: {
-        [CHAIN_TYPE.EVM]: {
-            crossChain: "0x0000000000000000000000000000000000000000",
-            onChain: "0x0000000000000000000000000000000000000000"
-        }
-    }
-}
 const terms = general["terms"]
 
 const FormSchema = z.object({
@@ -51,32 +32,106 @@ const FormSchema = z.object({
 })
 
 export default function SwapEthereum() {
+    const { address } = useAccount()
+    const { chain } = useNetwork()
+    const { chains, switchNetwork } = useSwitchNetwork()
+
+    const [tradeData, setTradeData] = useState<any>()
+    const [trades, setTrades] = useState<any>()
+    const [calculating, setCalculating] = useState(false)
+
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     })
-     
-    function onSubmit(data: z.infer<typeof FormSchema>) {
+
+    let tradesData = []
+    
+    const onSubmit = (data: z.infer<typeof FormSchema>) => {
         if (data.fromToken.toString() === data.toToken.toString()) {
             toast({
                 title: "Submitted trade of same token:",
+                variant: "destructive",
                 description: (
-                    <pre className="mt-2 w-[340px] rounded-md bg-background p-4">
+                    <pre className="mt-2 w-[340px] rounded-md p-4">
+                        <code className="text-foreground">{JSON.stringify(data, null, 2)}</code>
+                    </pre>
+                ),
+            })
+        } else if (data.fromTokenAmount === "" || data.fromTokenAmount === null || data.fromTokenAmount === undefined) {
+            toast({
+                title: "Submitted no amount for token to transfer:",
+                variant: "destructive",
+                description: (
+                    <pre className="mt-2 w-[340px] rounded-md p-4">
                         <code className="text-foreground">{JSON.stringify(data, null, 2)}</code>
                     </pre>
                 ),
             })
         } else {
+            setCalculating(true)
+            setTradeData(undefined)
+            
+            const check = async () => {
+                const sdk = await SDK.createSDK(configuration)
+                const blockchain = BLOCKCHAIN_NAME.ETHEREUM
+                const trades: Array<OnChainTrade | OnChainTradeError> = await sdk.onChainManager.calculateTrade(
+                    { blockchain, address: data.fromToken }, 
+                    data.fromTokenAmount,
+                    data.toToken
+                )
+                setTrades(trades)
+                trades.forEach((trade, index) => {
+                    // type renamed
+                    // const tradeType: OnChainTradeType = trade.type
+                    // console.log(`trade type: ${tradeType}`)
+                  
+                    if (trade instanceof OnChainTrade) {
+                        tradesData.push({trade, index})
+                        setTradeData(tradesData)
+                    } else {
+                        console.log(`error: ${trade.error}`)
+                    }
+                    
+                })
+                setCalculating(false)
+            }
+            
+            check()
+            
             toast({
                 title: "You submitted the following values:",
                 description: (
-                    <pre className="mt-2 w-[340px] rounded-md bg-background p-4">
-                        <code className="text-foreground">{JSON.stringify(data, null, 2)}</code>
+                    <pre className="mt-2 w-[340px] rounded-md p-4">
+                        <code className="text-foreground">{terms.calculating_for}: {JSON.stringify(data, null, 2)}</code>
                     </pre>
                 ),
             })
         }
     }
 
+    const trade = async (index) => {
+        const sdk = await SDK.createSDK(configuration)
+            
+        const walletProvider = {
+            core: window.ethereum,
+            address: address
+        }
+
+        sdk.updateWalletProviderCore(CHAIN_TYPE.EVM,walletProvider)
+
+        const onConfirm = (hash: string) => console.log(hash)
+        let transactionHash
+        if (trades[index] instanceof OnChainTrade) {
+            transactionHash = await trades[index].swap({ onConfirm })
+        }
+        toast({
+            title: "Transaction Hash:",
+            description: (
+                <div className="text-foreground">{transactionHash}</div>
+            ),
+        })
+    }
+    
     return (
         <TabsContent value="ethereum">
             <Card>
@@ -112,7 +167,10 @@ export default function SwapEthereum() {
                                                     </SelectLabel>
                                                     {whitelist["ethereum"]["from"].map((item, index) => (
                                                         <SelectItem key={index} value={item.value}>
-                                                            {item.title}
+                                                            <div className="flex">
+                                                                <img className="w-4 h-4 mr-2" src={item.imgLink} />
+                                                                {`${item.title} ${item.value !== "0x0000000000000000000000000000000000000000" ? `(${truncateAddress(item.value, 6, 6)})` : ""}`}
+                                                            </div>
                                                         </SelectItem>
                                                     ))}
                                                 </SelectGroup>
@@ -144,7 +202,10 @@ export default function SwapEthereum() {
                                                     </SelectLabel>
                                                     {whitelist["ethereum"]["to"].map((item, index) => (
                                                         <SelectItem key={index} value={item.value}>
-                                                            {item.title}
+                                                            <div className="flex">
+                                                                <img className="w-4 h-4 mr-2" src={item.imgLink} />
+                                                                {`${item.title} ${item.value !== "0x0000000000000000000000000000000000000000" ? `(${truncateAddress(item.value, 6, 6)})` : ""}`}
+                                                            </div>
                                                         </SelectItem>
                                                     ))}
                                                 </SelectGroup>
@@ -168,6 +229,8 @@ export default function SwapEthereum() {
                                                 className="min-w-[50%] w-full max-w-[36rem]"
                                                 placeholder={general["terms"].enter_amount}
                                                 type="number"
+                                                min={0}
+                                                step={0.00001}
                                                 {...field}
                                             />
                                         </FormControl>
@@ -178,11 +241,39 @@ export default function SwapEthereum() {
                                     </FormItem>
                                 )}
                             />
-                            <Button type="submit">
-                                {terms.trade}
+                            <Button type="submit" disabled={calculating ? true : false}>
+                                {calculating ? terms.calculating : terms.calculate}
                             </Button>
                         </form>
                     </Form>
+                    {tradeData ? (
+                        <div className="w-2/3 min-w-[50%] max-w-[36rem]">
+                            <div className="grid grid-cols-[1fr_1fr_auto] p-2 pb-0 font-bold mt-2">
+                                <div>
+                                    {terms.dex}
+                                </div>
+                                <div>
+                                    {terms.to_amount}
+                                </div>
+                                <div>
+                                    {terms.amount}
+                                </div>
+                            </div>
+                            {tradeData.map((item, index) => (
+                                <div className="grid grid-cols-[1fr_1fr_auto] text-sm p-2 border border-muted rounded-md my-2">
+                                    <div key={`type-${index}`} className="my-auto">
+                                        {item.trade.type}
+                                    </div>
+                                    <div key={`amount-${index}`} className="my-auto">
+                                        {(Number(item.trade.to._weiAmount.c[0]) / Number(Math.pow(10, Number(item.trade.to.decimals)))).toFixed(5)} {item.trade.to.symbol}
+                                    </div>
+                                    <Button className="my-auto" variant="primary" key={`button-${index}`} onClick={chain.id !== chains[1].id ? () => switchNetwork?.(chains[1].id) : () => trade(item.index)}>
+                                        {chain.id !== chains[1].id ? terms.switch_network : terms.trade}
+                                    </Button>
+                                </div>
+                            ))}
+                        </div>
+                    ) : null}
                 </CardContent>
                 <CardFooter className="text-xs">
                     {`${terms.powered_by} ${terms.rubic_onchain}`}
